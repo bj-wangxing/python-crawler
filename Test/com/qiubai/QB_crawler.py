@@ -1,5 +1,10 @@
 # encoding:utf-8
 import urllib,urllib2,re
+'''
+2018-11-29
+干了11年的java开发，今天心血来潮试试 python
+不得不说，python 写爬虫比代码量少，提供的工具包简单完善，效率也不错
+'''
 
 #设置一个开始页码
 startpage_num=0
