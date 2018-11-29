@@ -1,0 +1,55 @@
+from HTMLParser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    def __init__(self):
+        HTMLParser.__init__(self)
+        self.links = []
+  
+    def handle_starttag(self, tag, attrs):
+        #print "Encountered the beginning of a %s tag" % tag
+        if tag == "a":
+            if len(attrs) == 0: pass
+            else:
+                for (variable, value)  in attrs:
+                    if variable == "href":
+                        self.links.append(value)
+  
+if __name__ == "__main__":
+    html_code = """
+    <a href="www.google.com"> google.com</a>
+    <A Href="www.pythonclub.org"> PythonClub </a>
+    <A HREF = "www.sina.com.cn"> Sina </a>
+    """
+    hp = MyHTMLParser()
+    hp.feed(html_code)
+    hp.close()
+    print(hp.links)
+    
+    
+import HTMLParser
+ 
+class TitleParser(HTMLParser.HTMLParser):
+    def __init__(self):
+        HTMLParser.HTMLParser.__init__(self)
+        self.handledtags = ['title','body']
+        self.processing = None
+        self.data = []
+ 
+    def handle_starttag(self,tag,attrs):
+        if tag in self.handledtags:
+            self.processing = tag
+ 
+    def handle_data(self,data):
+        if self.processing:
+            self.data.append(data)
+ 
+    def handle_endtag(self,tag):
+        if tag == self.processing:
+            self.processing = None
+ 
+if __name__ == '__main__':
+    fd = open('test1.html')
+    tp = TitleParser()
+    tp.feed(fd.read())
+    for each in tp.data:
+        print each    
