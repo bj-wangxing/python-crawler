@@ -1,5 +1,11 @@
 eclipse.preferences.version=1
+encoding//com/baidu/tieba/BaiduTB.py=utf-8
 encoding//com/htmltest/douban.py=utf8
+encoding//com/mongoDB/MyMongo.py=utf-8
+encoding//com/novel/Novel_crawler.py=utf-8
 encoding//com/qiubai/QB_crawler.py=utf-8
 encoding//com/qiubai/xmlHandel.py=utf-8
+encoding//com/taobao/MM_tools.py=utf-8
+encoding//com/taobao/chromTest.py=utf-8
+encoding//com/taobao/seleniumTest.py=utf-8
 encoding//com/test/cpTest1.py=utf-8
